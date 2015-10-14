@@ -1,0 +1,50 @@
+---
+title: "Reproducible Research Assignment1"
+author: "Aaron Prescott"
+date: "October 13, 2015"
+output: html_document
+---
+
+#Peer Assessment 1 Template
+
+##Loading required packages
+
+Load each of the required packages used for this peer assessment
+
+```{r}
+library(data.table)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+```
+
+##Loading the preprocessing the data file
+
+Move to the working data with the zip file. Unzip the file and then load the .csv file into the data table named 'data'
+
+```{r}
+unzip("repdata-data-activity.zip")
+data <- fread("activity.csv", sep = ",")
+data$date <- ymd(data$date)
+```
+
+##Mean, Median, and Total Number of Steps Taken Per Day
+
+Calculate the total number of steps taken each day by splitting data by date and summing along steps. Store this value in the totalStepsPerDay variable. Create a histogram with the qplot function from ggplot2 package. Calculate mean and median for the total steps each day by taking the mean and median of the calculated total steps taken each day.
+
+```{r, fig.height = 4}
+totalStepsPerDay <- sapply(split(data$step, data$date), sum, na.rm = T)
+qplot(totalStepsPerDay, main = "Total Steps Per Day", bin = range(totalStepsPerDay, na.rm = T)[2]/15)
+c("Mean:", mean(totalStepsPerDay))
+c("Median:", median(totalStepsPerDay))
+```
+
+##5 minute interval average total number of steps taken
+
+Calculate and plot the total number of steps taken over each 5 minute interval averaged across all days. Find the
+
+```{r, fig.height = 4}
+meanStepsPerInterval <- sapply(split(data$step, data$interval), mean, na.rm = T)
+qplot(unique(data$interval), meanStepsPerInterval, geom = "line")
+c("Interval with maximum mean steps:", unique(data$interval)[meanStepsPerInterval==max(meanStepsPerInterval)])
+  ```

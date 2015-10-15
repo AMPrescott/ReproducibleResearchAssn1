@@ -16,6 +16,16 @@ Load each of the required packages used for this peer assessment
 library(data.table)
 library(dplyr)
 library(ggplot2)
+library(lubridate)
+```
+
+```
+## 
+## Attaching package: 'lubridate'
+## 
+## The following objects are masked from 'package:data.table':
+## 
+##     hour, mday, month, quarter, wday, week, yday, year
 ```
 
 ## Loading the preprocessing the data file

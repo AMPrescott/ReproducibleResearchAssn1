@@ -14,7 +14,35 @@ Load each of the required packages used for this peer assessment
 
 ```r
 library(data.table)
+```
+
+```
+## data.table 1.9.4  For help type: ?data.table
+## *** NB: by=.EACHI is now explicit. See README to restore previous behaviour.
+```
+
+```r
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+## 
+## The following objects are masked from 'package:data.table':
+## 
+##     between, last
+## 
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 library(ggplot2)
 library(lubridate)
 ```
@@ -126,6 +154,8 @@ c("Median number of steps per day:", median(newTotalStepsPerDay))
 ```
 ## [1] "Median number of steps per day:" "10766.1886792453"
 ```
+
+Replacing missing data entry with means values results with less days reported in the lowest bin of the histogram. There is a high likelihood that the histogram with the missing entries replaced is a more accurate representation of actual behavior.lib
 
 ## Differences between weekends and weekdays
 

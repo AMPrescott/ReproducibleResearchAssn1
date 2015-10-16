@@ -208,8 +208,32 @@ hr {
 <p>Load each of the required packages used for this peer assessment</p>
 
 <pre><code class="r">library(data.table)
-library(dplyr)
-library(ggplot2)
+</code></pre>
+
+<pre><code>## data.table 1.9.4  For help type: ?data.table
+## *** NB: by=.EACHI is now explicit. See README to restore previous behaviour.
+</code></pre>
+
+<pre><code class="r">library(dplyr)
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;
+## 
+## The following objects are masked from &#39;package:data.table&#39;:
+## 
+##     between, last
+## 
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag
+## 
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union
+</code></pre>
+
+<pre><code class="r">library(ggplot2)
 library(lubridate)
 </code></pre>
 
@@ -299,6 +323,8 @@ qplot(newTotalStepsPerDay, main = &quot;Total Steps Per Day&quot;, binwidth = ra
 
 <pre><code>## [1] &quot;Median number of steps per day:&quot; &quot;10766.1886792453&quot;
 </code></pre>
+
+<p>Replacing missing data entry with means values results with less days reported in the lowest bin of the histogram. There is a high likelihood that the histogram with the missing entries replaced is a more accurate representation of actual behavior.lib</p>
 
 <h2>Differences between weekends and weekdays</h2>
 

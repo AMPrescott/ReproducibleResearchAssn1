@@ -64,6 +64,8 @@ c("Mean number of steps per day:", mean(newTotalStepsPerDay))
 c("Median number of steps per day:", median(newTotalStepsPerDay))
 ```
 
+Replacing missing data entry with means values results with less days reported in the lowest bin of the histogram. There is a high likelihood that the histogram with the missing entries replaced is a more accurate representation of actual behavior.lib
+
 ## Differences between weekends and weekdays
 
 Here, we sort the step data into weekdays(MTWTF)/weekends(SS). We compare the mean level of steps taken over each interval to eachother.
